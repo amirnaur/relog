@@ -15,12 +15,7 @@ const Map = ({applications}) => {
                     <Marker
                         key={application.id}
                         position={[application.coords.lat, application.coords.long]}
-                        onMouseOver={(e) => {
-                            e.target.openPopup();
-                        }}
-                        onMouseOut={(e) => {
-                            e.target.closePopup();
-                        }}>
+                    >
                         
                         <Tooltip>{application.id} {application.coords.lat, application.coords.long}</Tooltip>
 

@@ -19,11 +19,7 @@ const ApplicationsList = ({applications}) => {
         itemCount={applications.length}
         itemSize={60}
         width={300}>
-            {/* {applications.map((item) => {
-                return (
-                    <ApplicationItem key={item.id} item={item}/>
-                )
-            })} */}
+            
             {Row}
         </List>
         
