@@ -1,19 +1,20 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import ApplicationsList from '../applicationsList';
 import Map from '../map';
 import AppsData from '../../services/appsData';
-
+import './style.css';
 const App = () => {
     const data = new AppsData();
+    const [applications, setApplications] = useState([])
     useEffect(() => {
         data.getAppsItems()
-            .then((response) => console.log(response));
-    }, [])
+            .then((response) => setApplications(response));
+    }, []);
     return (
-        <>
-            <ApplicationsList />
-            <Map />
-        </>
+        <div className="app-container">
+            <ApplicationsList applications={applications}/>
+            <Map applications={applications}/>
+        </div>
     )
 }
 
