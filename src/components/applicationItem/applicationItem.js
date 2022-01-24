@@ -10,9 +10,12 @@ const ApplicationItem = ({item}) => {
     }, [])
     return (
         <div className="aplication-item" title={client.name}>
-            <div>Client: <span className="client-name">{client.name}</span></div>
-            <div>Type: {item.type}</div>
-            <div>Price: {item.price}</div>
+            <div className="client-name"><span className="client-name-title">{client.name}</span></div>
+            <div className="type-price-container">
+                <div className={`application-type ${item.type}`}>{item.type}</div>
+                <div className="application-price">Price: <span>{item.price}</span></div>
+            </div>
+            
         </div>
     )
 }
